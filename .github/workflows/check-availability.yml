@@ -35,17 +35,15 @@ jobs:
           CURRENT_TIME=$(date '+%Y-%m-%d %H:%M')
 
           # Write to Job Summary
-          cat >> $GITHUB_STEP_SUMMARY << EOF
-          ## $EMOJI Kobo Remote Status
-
-          **Status:** $STATUS
-
-          $MESSAGE
-
-          [View Product Page]($PRODUCT_URL)
-
-          *Checked: $CURRENT_TIME (Lisbon)*
-          EOF
+          echo "## $EMOJI Kobo Remote Status" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** $STATUS" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "$MESSAGE" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[View Product Page]($PRODUCT_URL)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "*Checked: $CURRENT_TIME (Lisbon)*" >> $GITHUB_STEP_SUMMARY
 
           # Output status for potential downstream use
           echo "status=$STATUS" >> $GITHUB_OUTPUT
