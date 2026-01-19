@@ -51,5 +51,10 @@ jobs:
           # Log to console as well
           echo "Kobo Remote is currently: $STATUS"
 
-          # TEMPORARY: Force failure to test Slack notifications
-          exit 1
+          # Exit with status code based on availability
+          # Success (0) = In Stock, Failure (1) = Out of Stock
+          if [ "$STATUS" = "AVAILABLE" ]; then
+            exit 0
+          else
+            exit 1
+          fi
