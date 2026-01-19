@@ -9,6 +9,9 @@ on:
 env:
   TZ: Europe/Lisbon
 
+permissions:
+  issues: write
+
 jobs:
   check-availability:
     runs-on: ubuntu-latest
