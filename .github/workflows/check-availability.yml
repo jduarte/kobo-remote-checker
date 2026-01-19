@@ -50,3 +50,6 @@ jobs:
 
           # Log to console as well
           echo "Kobo Remote is currently: $STATUS"
+
+          # TEMPORARY: Force failure to test Slack notifications
+          exit 1
