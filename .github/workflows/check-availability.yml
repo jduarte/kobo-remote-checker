@@ -65,10 +65,4 @@ jobs:
         with:
           issue-number: 1
           body: |
-            ${{ steps.check.outputs.emoji }} **Kobo Remote Status: ${{ steps.check.outputs.status }}**
-
-            ${{ steps.check.outputs.message }}
-
-            🔗 [View Product Page](${{ steps.check.outputs.url }})
-
-            _Checked: ${{ steps.check.outputs.time }} (Lisbon)_
+            ${{ steps.check.outputs.emoji }} **${{ steps.check.outputs.status }}** - ${{ steps.check.outputs.message }} [View Product](${{ steps.check.outputs.url }}) (_${{ steps.check.outputs.time }}_)
